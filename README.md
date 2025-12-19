@@ -19,6 +19,8 @@ Welcome to my portfolio! I build professional, high-impact software solutions.
 ### 🚀 Projects
 
 - **[Disk Sentinel AI](https://github.com/kelvinvelasquez-SDE/Disk-Sentinel-AI)**: Intelligent Disk Monitoring System with Predictive AI and Cyber-Glass UI.
+<!--START_SECTION:activity-->
+<!--END_SECTION:activity-->
 
 ---
 
