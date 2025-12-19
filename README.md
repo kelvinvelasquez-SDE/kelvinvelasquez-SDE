@@ -1,16 +1,27 @@
-## Hi there 👋
+# Hi there, I'm Kelvin Velasquez 👋
 
-<!--
-**kelvinvelasquez-SDE/kelvinvelasquez-SDE** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
+### Software Development Engineer | Tech Enthusiast
 
-Here are some ideas to get you started:
+Welcome to my portfolio! I build professional, high-impact software solutions.
 
-- 🔭 I’m currently working on ...
-- 🌱 I’m currently learning ...
-- 👯 I’m looking to collaborate on ...
-- 🤔 I’m looking for help with ...
-- 💬 Ask me about ...
-- 📫 How to reach me: ...
-- 😄 Pronouns: ...
-- ⚡ Fun fact: ...
--->
+---
+
+<div align="center">
+
+<a href="https://www.linkedin.com/comm/mynetwork/discovery-see-all?usecase=PEOPLE_FOLLOWS&followMember=kelvin-velasquez" target="_blank">
+  <img src="https://img.shields.io/badge/Follow%20on%20LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" height="35" />
+</a>
+
+</div>
+
+---
+
+### 🚀 Projects
+
+- **[Disk Sentinel AI](https://github.com/kelvinvelasquez-SDE/Disk-Sentinel-AI)**: Intelligent Disk Monitoring System with Predictive AI and Cyber-Glass UI.
+
+---
+
+<div align="center">
+  <sub>Developed with ❤️ by Kelvin Velasquez</sub>
+</div>
