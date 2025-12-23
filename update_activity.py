@@ -1,102 +1,78 @@
 import json
+import subprocess
 import re
-import sys
-from urllib.request import urlopen, Request
 from datetime import datetime
 
-USERNAME = "kelvinvelasquez-SDE"
-URL = f"https://api.github.com/users/{USERNAME}/events"
+def run_gh_command(command):
+    result = subprocess.run(command, capture_output=True, text=True, shell=True)
+    if result.returncode != 0:
+        print(f"Error running command: {command}")
+        print(result.stderr)
+        return []
+    return json.loads(result.stdout)
 
-def fetch_json(url):
+def get_activity():
+    # Fetch merged PRs
+    print("Fetching merged PRs...")
+    # Use --merged flag instead of --state merged
+    merged_prs = run_gh_command('gh search prs --author "@me" --merged --sort updated --limit 10 --json title,repository,url,updatedAt,state')
+    
+    # Fetch open PRs
+    print("Fetching open PRs...")
+    open_prs = run_gh_command('gh search prs --author "@me" --state open --sort updated --limit 5 --json title,repository,url,updatedAt,state')
+    
+    all_prs = merged_prs + open_prs
+    # Sort by update time desc
+    all_prs.sort(key=lambda x: x['updatedAt'], reverse=True)
+    return all_prs
+
+def format_activity(prs):
+    lines = ["| Project | PR | Status | Date |", "|---|---|---|---|"]
+    for pr in prs[:10]: # Limit to top 10
+        repo_name = pr['repository']['nameWithOwner']
+        title = pr['title']
+        url = pr['url']
+        state = "🟣 Merged" if pr['state'] == 'MERGED' else "🟢 Open"
+        date = datetime.strptime(pr['updatedAt'], "%Y-%m-%dT%H:%M:%SZ").strftime("%Y-%m-%d")
+        
+        # Clean title of generic prefixes if desired, or keep as is
+        lines.append(f"| [{repo_name}](https://github.com/{repo_name}) | [{title}]({url}) | {state} | {date} |")
+    
+    return "\n".join(lines)
+
+def update_readme(content):
+    readme_path = "README.md"
     try:
-        req = Request(url, headers={"User-Agent": "Python/ProfileUpdater"})
-        with urlopen(req) as response:
-            return json.load(response)
-    except Exception as e:
-        print(f"Error fetching {url}: {e}")
-        return None
+        with open(readme_path, "r") as f:
+            current_content = f.read()
+    except FileNotFoundError:
+        print("README.md not found, creating basic one.")
+        current_content = "# Context \n\n<!-- START_ACTIVITY -->\n<!-- END_ACTIVITY -->\n"
 
-def get_pr_details(api_url):
-    data = fetch_json(api_url)
-    if data:
-        return data.get("title"), data.get("html_url")
-    return None, None
-
-def format_event(event):
-    type = event.get("type")
-    repo = event.get("repo", {}).get("name")
-    payload = event.get("payload", {})
-    created_at = event.get("created_at")
+    start_marker = "<!-- START_ACTIVITY -->"
+    end_marker = "<!-- END_ACTIVITY -->"
     
-    # Format date
-    date_obj = datetime.strptime(created_at, "%Y-%m-%dT%H:%M:%SZ")
-    date_str = date_obj.strftime("%d %b")
-
-    if type == "PullRequestEvent":
-        action = payload.get("action")
-        pr_api_url = payload.get("pull_request", {}).get("url")
-        
-        # If title/html_url missing, fetch them
-        title = payload.get("pull_request", {}).get("title")
-        html_url = payload.get("pull_request", {}).get("html_url")
-        
-        if not title or not html_url:
-             print(f"Fetching details for PR in {repo}...")
-             title, html_url = get_pr_details(pr_api_url)
-
-        if action == "opened":
-            return f"- 🚀 **PR Opened** in [{repo}]({html_url}): {title} ({date_str})"
-        elif action == "closed" or action == "merged":
-            # Check if merged if action is closed, or if action is explicitly merged
-            is_merged = payload.get("pull_request", {}).get("merged") or action == "merged"
-            if is_merged:
-                 return f"- 🎉 **PR Merged** in [{repo}]({html_url}): {title} ({date_str})"
-            
-    elif type == "IssuesEvent" and payload.get("action") == "opened":
-        issue_url = payload.get("issue", {}).get("html_url")
-        title = payload.get("issue", {}).get("title")
-        return f"- 🐛 **Issue Opened** in [{repo}]({issue_url}): {title} ({date_str})"
-
-    return None
-
-def update_readme(lines):
-    with open("README.md", "r", encoding="utf-8") as f:
-        content = f.read()
-
-    start_marker = "<!--START_SECTION:activity-->"
-    end_marker = "<!--END_SECTION:activity-->"
+    if start_marker not in current_content or end_marker not in current_content:
+        print("Markers not found in README.md. Appending them.")
+        current_content += f"\n## Recent Contributions\n{start_marker}\n{end_marker}\n"
     
-    activity_content = "\n" + "\n".join(lines) + "\n"
+    pattern = re.compile(f"{re.escape(start_marker)}.*{re.escape(end_marker)}", re.DOTALL)
+    new_block = f"{start_marker}\n{content}\n{end_marker}"
     
-    pattern = f"{re.escape(start_marker)}(.*?){re.escape(end_marker)}"
-    replacement = f"{start_marker}{activity_content}{end_marker}"
+    new_content = pattern.sub(new_block, current_content)
     
-    new_content = re.sub(pattern, replacement, content, flags=re.DOTALL)
-    
-    with open("README.md", "w", encoding="utf-8") as f:
+    with open(readme_path, "w") as f:
         f.write(new_content)
+    print("README.md updated successfully.")
 
 def main():
-    events = fetch_json(URL)
-    if not events:
+    prs = get_activity()
+    if not prs:
+        print("No activity found or error occurred.")
         return
-
-    activity_lines = []
-    
-    count = 0
-    for event in events:
-        line = format_event(event)
-        if line:
-            activity_lines.append(line)
-            count += 1
-            if count >= 7:
-                break
-    
-    if activity_lines:
-        print(f"Found {len(activity_lines)} activities. Updating README...")
-        update_readme(activity_lines)
-    else:
-        print("No significant activity found.")
+        
+    markdown_table = format_activity(prs)
+    update_readme(markdown_table)
 
 if __name__ == "__main__":
     main()

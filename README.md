@@ -32,3 +32,15 @@ Welcome to my portfolio! I build professional, high-impact software solutions.
 <div align="center">
   <sub>Developed with ❤️ by Kelvin Velasquez</sub>
 </div>
+
+## Recent Contributions
+<!-- START_ACTIVITY -->
+| Project | PR | Status | Date |
+|---|---|---|---|
+| [kelvinvelasquez-SDE/mindsdb](https://github.com/kelvinvelasquez-SDE/mindsdb) | [feat: Add DeepSeek Handler](https://github.com/kelvinvelasquez-SDE/mindsdb/pull/1) | 🟢 Open | 2025-12-23 |
+| [ShahzaibAhmad05/Gitree](https://github.com/ShahzaibAhmad05/Gitree) | [feat: add interactive mode for file selection](https://github.com/ShahzaibAhmad05/Gitree/pull/83) | 🟢 Open | 2025-12-23 |
+| [mindsdb/mindsdb](https://github.com/mindsdb/mindsdb) | [feat(arangodb_handler): add ArangoDB support](https://github.com/mindsdb/mindsdb/pull/12039) | 🟢 Open | 2025-12-23 |
+| [mindsdb/mindsdb](https://github.com/mindsdb/mindsdb) | [fix(s3_handler): handle None location constraint as us-east-1](https://github.com/mindsdb/mindsdb/pull/12038) | 🟢 Open | 2025-12-23 |
+| [ShahzaibAhmad05/Gitree](https://github.com/ShahzaibAhmad05/Gitree) | [fix(copy): robust clipboard fallback support for windows/linux](https://github.com/ShahzaibAhmad05/Gitree/pull/82) | 🟢 Open | 2025-12-23 |
+| [nicolargo/glances](https://github.com/nicolargo/glances) | [fix(security): resolve B701 (Jinja2) and B113 (timeout) vulnerabilities](https://github.com/nicolargo/glances/pull/3383) | 🟢 Open | 2025-12-20 |
+<!-- END_ACTIVITY -->
