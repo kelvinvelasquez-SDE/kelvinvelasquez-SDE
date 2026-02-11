@@ -49,7 +49,6 @@
 <!-- START_ACTIVITY -->
 | Project | Description | Status | Date |
 | :--- | :--- | :---: | :---: |
-| [supabase/supabase-py](https://github.com/supabase/supabase-py) | [fix(postgrest): handle empty result & PGRST116 in maybe_s...](https://github.com/supabase/supabase-py/pull/1393) | 🟢 Open | Feb 11 |
 | [nicolargo/glances](https://github.com/nicolargo/glances) | [feat(profiler): Add sampling profiler using sys.monitorin...](https://github.com/nicolargo/glances/pull/3389) | 🟢 Open | Dec 23 |
 | [kelvinvelasquez-SDE/localstack](https://github.com/kelvinvelasquez-SDE/localstack) | [fix(lambda): Atomic unpack of S3Code to prevent race cond...](https://github.com/kelvinvelasquez-SDE/localstack/pull/1) | 🟢 Open | Dec 23 |
 | [vllm-project/vllm](https://github.com/vllm-project/vllm) | [fix(core): break circular reference in Request using weakref](https://github.com/vllm-project/vllm/pull/31225) | 🟢 Open | Dec 23 |
