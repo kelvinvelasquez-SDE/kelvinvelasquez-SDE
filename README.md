@@ -62,5 +62,5 @@
 <!-- END_ACTIVITY -->
 
 <div align='center'>
-  <sub>Automated by Antigravity 🚀</sub>
+  <sub>🚀</sub>
 </div>

@@ -142,7 +142,7 @@ def update_readme():
     stats = generate_stats_section()
     
     # Assembly
-    content = f"{header}\n{stats}\n\n## 🚀 Recent Activity\n<!-- START_ACTIVITY -->\n{activity_table}\n<!-- END_ACTIVITY -->\n\n<div align='center'>\n  <sub>Automated by Antigravity 🚀</sub>\n</div>"
+    content = f"{header}\n{stats}\n\n## 🚀 Recent Activity\n<!-- START_ACTIVITY -->\n{activity_table}\n<!-- END_ACTIVITY -->\n\n<div align='center'>\n  <sub>🚀</sub>\n</div>"
     
     # Ensure directory exists just in case (though it should be the repo root)
     if not os.path.exists(README_PATH) and "/" in README_PATH:
