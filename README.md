@@ -49,6 +49,7 @@
 <!-- START_ACTIVITY -->
 | Project | Description | Status | Date |
 | :--- | :--- | :---: | :---: |
+| [vllm-project/vllm](https://github.com/vllm-project/vllm) | [fix(openai): correct timestamp drift for long audio chunk...](https://github.com/vllm-project/vllm/pull/34461) | 🟢 Open | Feb 12 |
 | [langchain-ai/langchain](https://github.com/langchain-ai/langchain) | [fix: ChatOpenAI silently drops reasoning_content](https://github.com/langchain-ai/langchain/pull/35180) | 🟢 Open | Feb 11 |
 | [supabase/supabase-py](https://github.com/supabase/supabase-py) | [fix(realtime): make AsyncRealtimeChannel.subscribe() awai...](https://github.com/supabase/supabase-py/pull/1394) | 🟢 Open | Feb 11 |
 | [nicolargo/glances](https://github.com/nicolargo/glances) | [feat(profiler): Add sampling profiler using sys.monitorin...](https://github.com/nicolargo/glances/pull/3389) | 🟢 Open | Dec 23 |
@@ -58,7 +59,6 @@
 | [ShahzaibAhmad05/gitree](https://github.com/ShahzaibAhmad05/gitree) | [feat: add interactive mode for file selection](https://github.com/ShahzaibAhmad05/gitree/pull/83) | 🟣 Merged | Dec 23 |
 | [mindsdb/mindsdb](https://github.com/mindsdb/mindsdb) | [feat(arangodb_handler): add ArangoDB support](https://github.com/mindsdb/mindsdb/pull/12039) | 🟢 Open | Dec 23 |
 | [ShahzaibAhmad05/gitree](https://github.com/ShahzaibAhmad05/gitree) | [fix(copy): robust clipboard fallback support for windows/...](https://github.com/ShahzaibAhmad05/gitree/pull/82) | 🟣 Merged | Dec 23 |
-| [localstack/localstack](https://github.com/localstack/localstack) | [fix(transcribe): allow exact 4h duration and handle inval...](https://github.com/localstack/localstack/pull/13561) | 🟣 Merged | Dec 22 |
 <!-- END_ACTIVITY -->
 
 <div align='center'>
