@@ -55,7 +55,6 @@
 | [vllm-project/vllm](https://github.com/vllm-project/vllm) | [fix(core): break circular reference in Request using weakref](https://github.com/vllm-project/vllm/pull/31225) | 🟢 Open | Dec 23 |
 | [kelvinvelasquez-SDE/mindsdb](https://github.com/kelvinvelasquez-SDE/mindsdb) | [feat: Add DeepSeek Handler](https://github.com/kelvinvelasquez-SDE/mindsdb/pull/1) | 🟢 Open | Dec 23 |
 | [ShahzaibAhmad05/gitree](https://github.com/ShahzaibAhmad05/gitree) | [feat: add interactive mode for file selection](https://github.com/ShahzaibAhmad05/gitree/pull/83) | 🟣 Merged | Dec 23 |
-| [mindsdb/mindsdb](https://github.com/mindsdb/mindsdb) | [feat(arangodb_handler): add ArangoDB support](https://github.com/mindsdb/mindsdb/pull/12039) | 🟢 Open | Dec 23 |
 | [ShahzaibAhmad05/gitree](https://github.com/ShahzaibAhmad05/gitree) | [fix(copy): robust clipboard fallback support for windows/...](https://github.com/ShahzaibAhmad05/gitree/pull/82) | 🟣 Merged | Dec 23 |
 | [localstack/localstack](https://github.com/localstack/localstack) | [fix(transcribe): allow exact 4h duration and handle inval...](https://github.com/localstack/localstack/pull/13561) | 🟣 Merged | Dec 22 |
 | [nicolargo/glances](https://github.com/nicolargo/glances) | [fix(security): resolve B701 (Jinja2) and B113 (timeout) v...](https://github.com/nicolargo/glances/pull/3383) | 🟣 Merged | Dec 19 |
