@@ -49,6 +49,7 @@
 <!-- START_ACTIVITY -->
 | Project | Description | Status | Date |
 | :--- | :--- | :---: | :---: |
+| [Qiskit/qiskit](https://github.com/Qiskit/qiskit) | [Fix QASM3 experimental delay unit serialization](https://github.com/Qiskit/qiskit/pull/16317) | 🟢 Open | May 29 |
 | [vllm-project/vllm](https://github.com/vllm-project/vllm) | [fix(openai): correct timestamp drift for long audio chunk...](https://github.com/vllm-project/vllm/pull/34461) | 🟢 Open | Feb 12 |
 | [nicolargo/glances](https://github.com/nicolargo/glances) | [feat(profiler): Add sampling profiler using sys.monitorin...](https://github.com/nicolargo/glances/pull/3389) | 🟢 Open | Dec 23 |
 | [kelvinvelasquez-SDE/localstack](https://github.com/kelvinvelasquez-SDE/localstack) | [fix(lambda): Atomic unpack of S3Code to prevent race cond...](https://github.com/kelvinvelasquez-SDE/localstack/pull/1) | 🟢 Open | Dec 23 |
